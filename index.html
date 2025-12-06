@@ -209,6 +209,16 @@
             border-radius: 16px;
             border: 1px solid rgba(139, 115, 85, 0.1);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -494,12 +504,7 @@
 
             h2 {
                 font-size: 2rem;
-            }    
-        }
-        .service-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            }
         }
     </style>
 </head>
@@ -533,18 +538,13 @@
         <h2>Leistungen</h2>
         <p class="section-subtitle">Professionelle Restaurierung für Ihre wertvollen Stücke</p>
         <div class="service-grid">
-            <a href="seite2.html" class="service-link">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <h3>Möbelrestaurierung</h3>
-                    <p>Fachgerechte Restaurierung antiker und historischer Möbelstücke unter Berücksichtigung traditioneller Techniken und Materialien für dauerhaften Werterhalt.</p>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
-            </a>
+                <h3>Möbelrestaurierung</h3>
+                <p>Fachgerechte Restaurierung antiker und historischer Möbelstücke unter Berücksichtigung traditioneller Techniken und Materialien für dauerhaften Werterhalt.</p>
+            </div>
             <div class="service-card">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
