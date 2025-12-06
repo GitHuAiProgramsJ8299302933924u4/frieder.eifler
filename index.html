@@ -130,17 +130,20 @@
         }
 
         .hero-image {
-            background: linear-gradient(135deg, #8B7355 0%, #6b5d52 100%);
-            height: 500px;
+            height: 500px;               
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;             
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.2rem;
             position: relative;
-            overflow: hidden;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;            
+            display: block;
         }
 
         .hero-image::before {
@@ -534,7 +537,7 @@
                 <a href="#contact" class="cta-button">Kostenlose Beratung anfragen</a>
             </div>
             <div class="hero-image">
-                <img src="images/hero.webp" alt="Mein Hero Bild" style="width:100%; height:auto; object-fit: cover;" />
+                <img src="images/hero.webp" alt="Mein Hero Bild"/>
                 <span>Ihr Restaurierungsexperte</span>
             </div>
         </div>
