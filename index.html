@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holz- und Möbelrestaurierung Frieder Eifler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #ffffff;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #8B7355;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c2c2c;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8B7355;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #8B7355;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f5f1ed 0%, #e8e3dd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 115, 85, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c2c2c;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #8B7355 0%, #6b5d52 100%);
+            height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M0 200 Q100 150 200 200 T400 200 L400 400 L0 400 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: #8B7355;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(139, 115, 85, 0.25);
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #6b5d52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(139, 115, 85, 0.35);
+        }
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 7rem 3rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fafaf9;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-color: rgba(139, 115, 85, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8B7355 0%, #6b5d52 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-card h3 {
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about {
+            background: #f5f1ed;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #8B7355;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .feature-text {
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #8B7355 0%, #6b5d52 100%);
+            height: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: #fafaf9;
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            height: fit-content;
+        }
+
+        .contact-info h3 {
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #8B7355 0%, #6b5d52 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-details {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .contact-details strong {
+            display: block;
+            color: #2c2c2c;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-form {
+            background: #fafaf9;
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+        }
+
+        .contact-form h3 {
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: #2c2c2c;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e8e3dd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8B7355;
+            box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            background: #8B7355;
+            color: white;
+            padding: 1.1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(139, 115, 85, 0.25);
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #6b5d52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(139, 115, 85, 0.35);
+        }
+
+        footer {
+            background: #2c2c2c;
+            color: #999;
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 0 2rem;
+            }
+
+            section {
+                padding: 5rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Frieder Eifler</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Holz- und Möbelrestaurierung</h1>
+                <p class="subtitle">Meisterhafte Restaurierung mit Tradition und Leidenschaft seit Jahren</p>
+                <a href="#contact" class="cta-button">Kostenlose Beratung anfragen</a>
+            </div>
+            <div class="hero-image">
+                <span>Ihr Restaurierungsexperte</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Leistungen</h2>
+        <p class="section-subtitle">Professionelle Restaurierung für Ihre wertvollen Stücke</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3>Möbelrestaurierung</h3>
+                <p>Fachgerechte Restaurierung antiker und historischer Möbelstücke unter Berücksichtigung traditioneller Techniken und Materialien für dauerhaften Werterhalt.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3>Sonderanfertigungen</h3>
+                <p>Anfertigung von Reproduktionen und historischen Nachbauten nach traditionellen Handwerkstechniken und originalgetreuen Vorlagen.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <h3>Museumsarbeiten</h3>
+                <p>Professionelle Durchführung von Museumstätigkeiten wie fachgerechte Bilderhängung und Vitrinenbau, Organisation des Leihverkehrs sowie konservatorische Reinigung für den sicheren Erhalt und die optimale Präsentation von Objekten.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h3>Wissensvermittlung</h3>
+                <p>Weitergabe restauratorischer Fachkenntnisse durch Unterricht und Seminare zu traditionellen Restaurierungstechniken sowie Bereitstellung von Praktikums- und FÖJ-Stellen im Bereich Denkmalschutz zur Förderung des beruflichen Nachwuchses.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Über mich</h2>
+        <p class="section-subtitle">Tradition trifft auf Expertise</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Seit vielen Jahren widme ich mich mit Leidenschaft und Fachwissen der professionellen Restaurierung von Holzmöbeln und historischen Objekten. Mein Handwerk verbindet traditionelle Techniken mit modernem Know-how.</p>
+                <p>Jedes Projekt wird mit größter Sorgfalt und unter Beachtung denkmalpflegerischer Grundsätze durchgeführt. Ich lege Wert auf Qualität, Authentizität und die Erhaltung der ursprünglichen Substanz Ihrer wertvollen Stücke.</p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="feature-text">Jahrelange Erfahrung in der Restaurierung</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="feature-text">Traditionelle Handwerkstechniken</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="feature-text">Individuelle Beratung und Betreuung</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="feature-text">Hochwertige Materialien und Verarbeitung</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Kontakt</h2>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h3>Anfrage senden</h3>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Ihr Name</label>
+                        <input type="text" id="name" required placeholder="Max Mustermann">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ihre E-Mail</label>
+                        <input type="email" id="email" required placeholder="max@beispiel.de">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon (optional)</label>
+                        <input type="tel" id="phone" placeholder="+49 123 456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht</label>
+                        <textarea id="message" required placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Nachricht senden</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Kontaktinformationen</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <strong>Frieder Eifler</strong>
+                        Holz- und Möbelrestaurierung
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <strong>Adresse</strong>
+                        August-Bebel-Straße 31<br>
+                        02785 Olbersdorf
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07a19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <strong>Telefon</strong>
+                        Auf Anfrage
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <strong>E-Mail</strong>
+                        Auf Anfrage
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Holz- und Möbelrestaurierung Frieder Eifler. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
+            e.target.reset();
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
